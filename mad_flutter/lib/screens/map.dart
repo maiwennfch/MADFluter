@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import '/db/database_helper.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'package:geolocator/geolocator.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class MapScreen extends StatefulWidget {
   const MapScreen({super.key});
@@ -44,15 +48,18 @@ class _MapScreenState extends State<MapScreen> {
   }
 
   void loadRouteCoordinates() {
-  // Load list of coordinates in the route
+    // Load list of coordinates in the route
     routeCoordinates = [
-      const LatLng(40.407621980242745, -3.517071770311644),
-      const LatLng(40.409566291824795, -3.516234921159887),
-      const LatLng(40.41031785940011, -3.5146041381974897),
-      const LatLng(40.412784902661286, -3.513574170010713),
-      const LatLng(40.414189933233956, -3.512866066882304),
-      const LatLng(40.41686921259544, -3.511127995489052),
-      const LatLng(40.41997312229808, -3.5090251437743816),
+      const LatLng(40.38923590951672, -3.627749768768932),
+      const LatLng(40.39050012345678, -3.62650087654321),
+      const LatLng(40.39180023456789, -3.62520098765432),
+      const LatLng(40.39310034567890, -3.62390109876543),
+      const LatLng(40.39440045678901, -3.62260120987654),
+      const LatLng(40.39570056789012, -3.62130132098765),
+      const LatLng(40.39700067890123, -3.62000143209876),
+      const LatLng(40.39830078901234, -3.61870154320987),
+      const LatLng(40.39960089012345, -3.61740165432098),
+      const LatLng(40.40090090123456, -3.61610176543210),
     ];
   }
 
@@ -66,7 +73,7 @@ class _MapScreenState extends State<MapScreen> {
   Widget content(){
     return FlutterMap(
         options: const MapOptions(
-            initialCenter: LatLng(40.38923590951672, -3.627749768768932),
+              initialCenter: LatLng(40.38923590951672, -3.627749768768932),
             initialZoom: 15,
             interactionOptions: InteractionOptions(flags: InteractiveFlag.doubleTapZoom | InteractiveFlag.drag | InteractiveFlag.all)
         ),
@@ -79,13 +86,13 @@ class _MapScreenState extends State<MapScreen> {
                   points: routeCoordinates,
                   color: Colors.pink,
                   strokeWidth: 8.0,
-          ),
-        ])]
+                ),
+              ])]
     );
   }
 }
 
 TileLayer get openStreetMapTileLayer => TileLayer(
-    urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-    userAgentPackageName: 'dev.fleaflet.flutter_map.example',
+  urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+  userAgentPackageName: 'dev.fleaflet.flutter_map.example',
 );
