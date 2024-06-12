@@ -3,7 +3,7 @@
 ## Workspace 
 Github:  
 - Repository: https://github.com/maiwennfch/MADFluter/tree/master
-- Releases:    
+- Releases: https://github.com/maiwennfch/MADFluter/releases/tag/w19.2024   
 
 Workspace: https://upm365.sharepoint.com/sites/mobilappdevelopment
   
@@ -28,11 +28,11 @@ Get Mad Flutter today and never be caught off guard by the weather again!
 <table>
   <tr>
     <td>
-      <img src="img/1stScreen.png" width="80%" alt="First Screen"/>
+      <img src="img/1stSrceen.png" width="80%" alt="First Screen"/>
       <p align="center">First Screen</p>
     </td>
     <td>
-      <img src="img/alertdialogue.png" width="80%" alt="Alert dialog to prevent the user"/>
+      <img src="img/alertdialog.png" width="80%" alt="Alert dialog to prevent the user"/>
       <p align="center">Alert dialog to prevent the user</p>
     </td>
   </tr>
@@ -113,11 +113,20 @@ This Flutter app mirrors a previously delivered Kotlin project, integrating vari
     
     Weather API Integration
         Fetch and display weather data using an external weather API.
+        OpenWeatherMap API provides real-time and forecasted weather data, including alerts and historical information. It supports location-based queries and offers air quality and geocoding features.
+
+        Current Weather: Real-time weather data.
+        Forecast: Hourly and daily forecasts.
+        Alerts: Weather alerts for extreme conditions.
+        Historical Data: Access past weather records.
+        Air Quality: Information on pollution levels.
+        Geocoding: Convert locations to weather data.
+
+For more details, visit OpenWeatherMap API.
 
 
 
 ## How to Use
-
 
 #### Step 1: Open the App
 
